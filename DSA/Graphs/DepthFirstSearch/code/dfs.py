@@ -29,4 +29,15 @@ def dfs(graph, source):
     return visited #Returns the set of all visited nodes in the graph
 
 
-print(dfs(graph, 0))
+def dfs_recursive(graph, source, visited):
+
+    if source not in visited:
+        visited.add(source)
+        for u in graph[source]:
+            if u not in visited:
+                dfs_recursive(graph, u, visited)
+    return visited
+
+
+print(f"DFS iterative: {dfs(graph, 0)}")
+print(f"DFS recursive: {dfs_recursive(graph, 0, set())}")

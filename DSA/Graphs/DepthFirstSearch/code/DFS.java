@@ -1,4 +1,4 @@
-package dfs.code;
+package DepthFirstSearch.code;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -39,11 +39,35 @@ public class DFS {
         return visited;
     }
 
+    public static boolean[] dfsRecursive(int[][] graph, int source, boolean[] visited){
+        if (!visited[source]){
+            visited[source] = true;
+            for (int u = 0; u < graph[source].length; u++){
+                if (graph[source][u] == 1 && !visited[u]){
+                    dfsRecursive(graph, u, visited);
+                }
+            }
+        }
+        return visited;
+    }
+
     public static void main(String[] args) {
         boolean[] dfsRes = dfs(graph, 0);
+
+        boolean[] visited = new boolean[graph.length];
+        boolean[] dfsRecRes = dfsRecursive(graph, 0, visited);
+
+        System.out.print("DFS iterative: ");
         for (boolean value: dfsRes){
-            System.out.println(value);
+            System.out.printf("%s, ",value);
         }
+        System.out.println();
+
+        System.out.print("DFS recursive: ");
+        for (boolean value: dfsRecRes){
+            System.out.printf("%s, ",value);
+        }
+
        
     }
     

@@ -17,12 +17,23 @@ function dfs(graph, source) {
     if (!visited.has(v)) {
       visited.add(v);
       graph[v].forEach((u) => {
-        stack.push(u);
+        if (!visited.has(u)) {
+          stack.push(u);
+        }
       });
     }
   }
-  return visited
+  return visited;
 }
 
+function dfsRecursive(graph, source, visited){
+  if (!visited.has(source)){
+    visited.add(source);
+    graph[source].forEach((u) => {
+      dfsRecursive(graph, u, visited)
+    })
+  }
+}
 
-console.log(dfs(graph, 0))
+console.log("DFS iterative: ", dfs(graph, 0));
+console.log("DFS recursive: ", dfs(graph, 0, new Set()))
