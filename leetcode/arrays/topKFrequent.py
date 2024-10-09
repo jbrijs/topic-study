@@ -2,6 +2,15 @@ from typing import List
 
 '''
 LeetCode #347
+
+Given a list of numbers and a number 'k', find the kth most frequently occuring numbers.
+
+To solve this, first we iterate through the list, and add the occurences for each number
+into a map where the key is the number and the value is the value of occurences. Then a
+2D array is initialized. Iterating through the key value pairs of the map, add the key 
+to the list at index == occurences in the 2D array. Next, iterate backwards through the
+array and append the values to the result list. Once the lenght of the result list == k,
+ return the result list.
 '''
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
