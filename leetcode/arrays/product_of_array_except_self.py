@@ -1,6 +1,20 @@
 from typing import List
 import unittest
 
+'''
+LeetCode #238:
+
+Given a list of numbers, return a list of products for each item in the list, where the result is the product of the whole list, excluding that item. Kinda confusing, it makes more sense to look at it.
+
+This can be solved by constructing two arrays, one called 'before' and one 'after'.
+
+In the before array, you calculate the product of the list before that element in the list.
+In the after array, you calculate the product of the list after that eleement in the list
+
+Then, you multiply both lists together to get you result list.
+
+'''
+
 
 def productExceptSelf(nums: List[int]) -> List[int]:
     before = [1 for _ in range(len(nums))]
