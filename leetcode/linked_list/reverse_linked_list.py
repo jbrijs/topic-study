@@ -33,7 +33,7 @@ def reverseLinkedListRecursive(head: Optional[ListNode]) -> Optional[ListNode]:
         
         newHead = head
         if head.next:
-            newHead = self.reverseList(head.next)
+            newHead = reverseList(head.next)
             head.next.next = head
         head.next = None
 
