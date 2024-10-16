@@ -14,7 +14,7 @@ class TreeNode:
         self.right = right
 
 
-def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+def invertTree(root: Optional[TreeNode]) -> Optional[TreeNode]:
 
     if root == None:
         return root
