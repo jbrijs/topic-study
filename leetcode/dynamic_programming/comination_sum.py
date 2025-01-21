@@ -35,4 +35,5 @@ def combinationSum(candidates: List[int], target: int) -> List[int]:
 
             dfs(i, sol + [candidates[i]], sum + candidates[i])
 
+    dfs(0, [], 0)
     return res
