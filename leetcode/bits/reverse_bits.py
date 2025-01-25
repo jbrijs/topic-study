@@ -17,4 +17,3 @@ def reverseBits(n: int) -> int:
     rev = binary[::-1] + "".join(buffer)
 
     return int(rev, 2)
-
