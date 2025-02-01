@@ -15,5 +15,5 @@ def hammingWeight(n: int) -> int:
         if binary[i] == "1":
             count += 1
         
-
-    return count
+ 
+    return count 
